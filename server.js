@@ -1,6 +1,8 @@
 const Hapi = require('hapi');
 const Boom = require('boom');
 const Joi = require('joi');
+
+const Route = require('./app/route');
  
 const launchServer = async function() {
     
@@ -13,36 +15,12 @@ const launchServer = async function() {
     }
 
     const server = Hapi.Server({port: 3000})
- 	
+ 	await server.route(Route.load);
  	await server.register({
  		plugin: require('hapi-mongodb'),
  		options: dbOpts
  	})
-
-   	server.route( {
-        method: 'GET',
-        path: '/',
-        async handler(request) {
-        	return {message: 'Hello World'}
-        }
-    });
-
-    server.route( {
-    	method: 'GET',
-    	path: '/todo',
-    	async handler(request) {
-    		const db = request.mongo.db;
-    		try {
-    			const result = await db.collection('todos').find({}).toArray();
-        		return result;
-    		}
-    		catch(err) {
-    			throw Boom.internal('Internal Mongodb Error', err)
-    		}
-
-    	}
-    });
- 
+ 	
     await server.start();
     console.log(`Server started at ${server.info.uri}`);
 };
