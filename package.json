@@ -4,16 +4,19 @@
   "description": "Hapi.js CRUD Operations",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava --verbose test/**/*.js",
+    "start": "nodemon server.js"
   },
   "author": "Vipin",
   "license": "ISC",
   "dependencies": {
     "boom": "^7.1.1",
-    "chai": "^4.1.2",
     "hapi": "^17.2.0",
     "hapi-mongodb": "^7.1.0",
-    "hapi-test": "^5.2.0",
     "joi": "^13.1.1"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "nodemon": "^1.14.11"
   }
 }

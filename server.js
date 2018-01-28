@@ -3,7 +3,9 @@ const Boom = require('boom');
 const Joi = require('joi');
 
 const Route = require('./app/route');
- 
+
+const server = Hapi.Server({port: 3000})
+
 const launchServer = async function() {
     
     const dbOpts = {
@@ -13,8 +15,7 @@ const launchServer = async function() {
     	},
     	decorate: true
     }
-
-    const server = Hapi.Server({port: 3000})
+    
  	await server.route(Route.load);
  	await server.register({
  		plugin: require('hapi-mongodb'),
@@ -29,3 +30,5 @@ launchServer().catch((err) => {
     console.error(err);
     process.exit(1);
 });
+
+module.exports = server

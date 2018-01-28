@@ -17,7 +17,6 @@ exports.todo = {
 	createTodo: async function(request) {
 		const db = request.mongo.db;
 		try {
-			console.log(request.payload.name)
 			const result = await db.collection('todos').insertOne({name: request.payload.name, completed: false, created_at: new Date(), updated_at: new Date()});
         	return result;
 		}
@@ -26,6 +25,7 @@ exports.todo = {
 		}
 	},
 
+	//This will handle marked as done and unmarked as done based on the frontend logic
 	updateTodo: async function(request) {
 		const db = request.mongo.db;
 		const ObjectID = request.mongo.ObjectID;
