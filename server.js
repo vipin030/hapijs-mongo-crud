@@ -1,6 +1,7 @@
 const Hapi = require('hapi');
 const Boom = require('boom');
 const Joi = require('joi');
+const fs = require('fs');
 
 const Route = require('./app/route');
 
@@ -15,7 +16,14 @@ const launchServer = async function() {
     	},
     	decorate: true
     }
-    
+
+	const request = server.events.on('response', function (request) {
+		const logStream = fs.createWriteStream('logs/user_log', { flags: 'a' });
+		let logData = `{ip:${request.info.remoteAddress}, method: ${request.method.toUpperCase()}, path: ${request.url.path}, status_code: ${request.response.statusCode}, data: ${JSON.stringify(request.payload)}, timestamp: ${new Date()}}\n`;
+		logStream.write(logData);
+		logStream.end();
+	})
+
  	await server.route(Route.load);
  	await server.register({
  		plugin: require('hapi-mongodb'),

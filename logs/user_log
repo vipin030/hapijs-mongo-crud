@@ -1,0 +1,14 @@
+{ip:127.0.0.1, method: PUT, path: /todo/5a6cdd301f9c096b8de59e55, status_code: 200, data: {"completed":true}, timestamp: Mon Jan 29 2018 12:07:09 GMT+0100 (CET)}
+{ip:127.0.0.1, method: GET, path: /, status_code: 404, data: null, timestamp: Mon Jan 29 2018 19:11:19 GMT+0100 (CET)}
+{ip:127.0.0.1, method: GET, path: /todoss, status_code: 404, data: null, timestamp: Mon Jan 29 2018 21:04:20 GMT+0100 (CET)}
+{ip:127.0.0.1, method: GET, path: /todo, status_code: 200, data: null, timestamp: Mon Jan 29 2018 21:04:29 GMT+0100 (CET)}
+{ip:127.0.0.1, method: PUT, path: /todo/5a6cdd301f9c096b8de59e55, status_code: 200, data: {"completed":true}, timestamp: Mon Jan 29 2018 21:05:38 GMT+0100 (CET)}
+{ip:127.0.0.1, method: GET, path: /todo/5a6cdd301f9c096b8de59e55, status_code: 404, data: null, timestamp: Mon Jan 29 2018 21:09:26 GMT+0100 (CET)}
+{ip:127.0.0.1, method: POST, path: /todo, status_code: 400, data: {}, timestamp: Mon Jan 29 2018 21:14:18 GMT+0100 (CET)}
+{ip:127.0.0.1, method: POST, path: /todo, status_code: 400, data: {"name":"wanna"}, timestamp: Mon Jan 29 2018 21:14:18 GMT+0100 (CET)}
+{ip:127.0.0.1, method: PUT, path: /todo/5a6da75d25f6cc09e6be2194, status_code: 400, data: {"completed":"truee"}, timestamp: Mon Jan 29 2018 21:14:18 GMT+0100 (CET)}
+{ip:127.0.0.1, method: DELETE, path: /todo/5a6cdd301f9c096b8d, status_code: 500, data: {}, timestamp: Mon Jan 29 2018 21:14:18 GMT+0100 (CET)}
+{ip:127.0.0.1, method: GET, path: /todo, status_code: 200, data: null, timestamp: Mon Jan 29 2018 21:14:18 GMT+0100 (CET)}
+{ip:127.0.0.1, method: POST, path: /todo, status_code: 200, data: {"name":"Wanna buy milk"}, timestamp: Mon Jan 29 2018 21:14:18 GMT+0100 (CET)}
+{ip:127.0.0.1, method: DELETE, path: /todo/5a6da75d25f6cc09e6be2194, status_code: 200, data: {}, timestamp: Mon Jan 29 2018 21:14:18 GMT+0100 (CET)}
+{ip:127.0.0.1, method: PUT, path: /todo/5a6da75d25f6cc09e6be2194, status_code: 200, data: {"completed":true}, timestamp: Mon Jan 29 2018 21:14:18 GMT+0100 (CET)}
